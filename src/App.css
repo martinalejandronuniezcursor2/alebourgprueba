@@ -9,7 +9,6 @@
   text-align: left;
   display: block;
   padding-left: 1.5rem;
-  color: white;
 }
 
 .row>*{
@@ -216,11 +215,8 @@ button {
   .titulosprincipales {
     text-align: center !important;
     padding: 0 !important;
-    margin: 0.5rem 0 !important;
+    margin: 0.5rem -8px !important;
     width: 100% !important;
-    display: block !important;
-    white-space: normal !important;
-    overflow: visible !important;
   }
 
   .container {

@@ -37,7 +37,7 @@ const ProductosPorCategoria = () => {
     <div className="container mt-4">
       <Row className="justify-content-center">
         <Col>
-          <h4 className="titulosprincipales mb-4">
+          <h4 className="text-white titulosprincipales mb-4">
             {categoriaFormateada || nombreCategoria}
           </h4>
           <ProductosLista categoria={nombreCategoria} />
