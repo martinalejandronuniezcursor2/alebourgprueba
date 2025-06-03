@@ -131,7 +131,10 @@ const Header = () => {
                         onClick={() => setShowCategories(false)}
                       >
                         <span>{categoria.nombre}</span>
-                        <span className="category-count">{categoria.cantidad}</span>
+                        <span style={{
+                          color: '#999',
+                          fontSize: '0.9em'
+                        }}>{categoria.cantidad}</span>
                       </Link>
                     ))
                   )}
@@ -217,25 +220,76 @@ const Header = () => {
                     />
                   </button>
                   {showMobileCategories && (
-                    <div className="mobile-menu-categories">
+                    <div style={{
+                      position: 'fixed',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      backgroundColor: '#1e1e1e',
+                      zIndex: 9999,
+                      padding: '20px',
+                      overflowY: 'auto'
+                    }}>
+                      <div style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        marginBottom: '20px'
+                      }}>
+                        <h4 style={{ color: 'white', margin: 0 }}>Categorías</h4>
+                        <button 
+                          onClick={() => setShowMobileCategories(false)}
+                          style={{
+                            background: 'none',
+                            border: 'none',
+                            color: 'white',
+                            fontSize: '24px',
+                            padding: '10px',
+                            cursor: 'pointer'
+                          }}
+                        >
+                          <FaTimes />
+                        </button>
+                      </div>
                       {loading ? (
                         <div className="p-3 text-white">Cargando...</div>
                       ) : (
-                        categorias.map((categoria, index) => (
-                          <Link
-                            key={index}
-                            to={`/categoria/${formatCategory(categoria.nombreOriginal)}`}
-                            className="mobile-category-item"
-                            onClick={() => {
-                              const menu = document.getElementById('navbarMobile');
-                              const bsCollapse = new bootstrap.Collapse(menu);
-                              bsCollapse.hide();
-                            }}
-                          >
-                            <span>{categoria.nombre}</span>
-                            <span className="mobile-category-count">{categoria.cantidad}</span>
-                          </Link>
-                        ))
+                        <div style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '10px'
+                        }}>
+                          {categorias.map((categoria, index) => (
+                            <Link
+                              key={index}
+                              to={`/categoria/${formatCategory(categoria.nombreOriginal)}`}
+                              style={{
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                                padding: '15px',
+                                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                                borderRadius: '8px',
+                                color: 'white',
+                                textDecoration: 'none',
+                                transition: 'background-color 0.3s ease'
+                              }}
+                              onClick={() => {
+                                setShowMobileCategories(false);
+                                const menu = document.getElementById('navbarMobile');
+                                const bsCollapse = new bootstrap.Collapse(menu);
+                                bsCollapse.hide();
+                              }}
+                            >
+                              <span>{categoria.nombre}</span>
+                              <span style={{
+                                color: '#999',
+                                fontSize: '0.9em'
+                              }}>{categoria.cantidad}</span>
+                            </Link>
+                          ))}
+                        </div>
                       )}
                     </div>
                   )}
