@@ -728,7 +728,7 @@ button {
 
 @media (max-width: 575px) {
   .mb-4 {
-    margin: 0.5rem auto !important;
+    margin: 0.25rem auto !important;
     max-width: 90% !important;
   }
 
@@ -741,7 +741,7 @@ button {
   }
 }
 
-/* Estilos para el contenedor del buscador y ordenamiento */
+/* Estilos para el contenedor del buscador */
 .buscador-container {
   width: 100%;
   max-width: 1200px;
@@ -750,17 +750,43 @@ button {
 
 @media (max-width: 575px) {
   .buscador-container {
-    padding: 0.5rem;
-    margin-bottom: 0.5rem !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
   }
 
   .buscador-container .flex-grow-1 {
-    width: 100%;
     margin: 0 auto;
+    width: 90%;
   }
 
   .ordenamiento-dropdown {
     width: 90% !important;
-    margin: 0.5rem auto !important;
+    margin: 0.25rem auto !important;
+  }
+}
+
+/* Ajustes para el título en mobile */
+@media (max-width: 575px) {
+  .titulosprincipales {
+    margin-bottom: 0.5rem !important;
+    padding-bottom: 5px !important;
+    padding-left: 1rem !important;
+  }
+
+  .buscador-container {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Ajustar el margen del contenedor del buscador */
+  .mb-4 {
+    margin: 0.25rem auto !important;
+    max-width: 90% !important;
+  }
+
+  /* Ajustar el espacio del dropdown */
+  .ordenamiento-dropdown {
+    width: 90% !important;
+    margin: 0.25rem auto !important;
   }
 }
