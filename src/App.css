@@ -691,33 +691,54 @@ button {
   border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
-.ordenamiento-dropdown .dropdown-menu {
-  background: rgb(10, 10, 11) !important;
+/* Estilos base del dropdown menu */
+.dropdown-menu {
+  background-color: rgb(10, 10, 11) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 8px !important;
-  margin-top: 0.5rem !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8) !important;
 }
 
-.ordenamiento-dropdown .dropdown-item {
+.dropdown-menu .dropdown-item {
   color: rgba(255, 255, 255, 0.8) !important;
-  padding: 0.5rem 1rem !important;
-  font-size: 0.9rem !important;
+  background-color: rgb(10, 10, 11) !important;
 }
 
-.ordenamiento-dropdown .dropdown-item:hover {
-  background: rgba(255, 255, 255, 0.05) !important;
+.dropdown-menu .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
   color: white !important;
 }
 
 @media (max-width: 575px) {
-  .ordenamiento-dropdown {
-    width: 100% !important;
-    margin-top: 0.5rem !important;
-  }
-  
-  .ordenamiento-dropdown .dropdown-toggle {
-    width: 100% !important;
+  .ordenamiento-dropdown .dropdown-menu {
+    width: 80% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    position: absolute !important;
     text-align: center !important;
+    padding: 0.25rem 0 !important;
+    min-width: auto !important;
+    top: calc(100% + 2px) !important;
+    margin-top: 0 !important;
+    background-color: rgb(10, 10, 11) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  .ordenamiento-dropdown .dropdown-item {
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 0.4rem 0.75rem !important;
+    font-size: 0.9rem !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    background-color: rgb(10, 10, 11) !important;
+  }
+
+  .ordenamiento-dropdown .dropdown-toggle {
+    font-size: 0.9rem !important;
+    padding: 0.4rem 0.75rem !important;
+    background-color: rgb(10, 10, 11) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
 }
 
