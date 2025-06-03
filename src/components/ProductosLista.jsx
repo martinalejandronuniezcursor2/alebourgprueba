@@ -26,7 +26,8 @@ const ProductosLista = ({ categoria = null }) => {
           filtrados = data.filter(producto => {
             const productCategory = producto.categoria.toLowerCase()
               .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-              .replace(/\s+/g, '');
+              .replace(/\s+/g, '')
+              .replace(/[\/&]/g, '');
             
             return productCategory === categoriaNormalizada;
           });
@@ -54,41 +55,22 @@ const ProductosLista = ({ categoria = null }) => {
 
   const productosFiltrados = useMemo(() => {
     if (!busqueda) return productos;
-
-    const terminoBusqueda = busqueda.toLowerCase().trim();
     
-    return productos.filter(producto => {
-      const titulo = producto.titulo.toLowerCase();
-      const descripcion = producto.descripcion ? producto.descripcion.toLowerCase() : '';
-      
-      // Dividir el término de búsqueda en palabras
-      const palabrasBusqueda = terminoBusqueda.split(' ');
-      
-      // Verificar si todas las palabras de búsqueda están en el título o descripción
-      return palabrasBusqueda.every(palabra => 
-        titulo.includes(palabra) || descripcion.includes(palabra)
-      );
-    });
+    const busquedaLower = busqueda.toLowerCase();
+    return productos.filter(producto => 
+      producto.titulo.toLowerCase().includes(busquedaLower)
+    );
   }, [productos, busqueda]);
 
   const productosOrdenados = useMemo(() => {
-    let productosAOrdenar = [...productosFiltrados];
-    
-    if (ordenamiento === 'menor') {
-      return productosAOrdenar.sort((a, b) => {
-        const precioA = parseFloat(a.precio.replace(',', '.'));
-        const precioB = parseFloat(b.precio.replace(',', '.'));
-        return precioA - precioB;
-      });
-    } else if (ordenamiento === 'mayor') {
-      return productosAOrdenar.sort((a, b) => {
-        const precioA = parseFloat(a.precio.replace(',', '.'));
-        const precioB = parseFloat(b.precio.replace(',', '.'));
-        return precioB - precioA;
-      });
-    }
-    
-    return productosAOrdenar;
+    if (!ordenamiento) return productosFiltrados;
+
+    return [...productosFiltrados].sort((a, b) => {
+      const precioA = parseFloat(a.precio.replace(/,/g, ''));
+      const precioB = parseFloat(b.precio.replace(/,/g, ''));
+      
+      return ordenamiento === 'menor' ? precioA - precioB : precioB - precioA;
+    });
   }, [productosFiltrados, ordenamiento]);
 
   if (loading) return <div>Cargando productos...</div>;
