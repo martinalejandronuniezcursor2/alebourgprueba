@@ -1,0 +1,675 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.titulosprincipales {
+  text-align: left;
+  display: block;
+  padding-left: 1.5rem;
+}
+
+.row>*{
+  margin-bottom: 20px;
+}
+
+.logo {
+  will-change: filter, transform;
+  transition: filter 300ms, transform 300ms ease;
+}
+
+.logo:hover {
+  filter: 
+    drop-shadow(0 0 2em #e20df58c) 
+    drop-shadow(0 0 1em #e20df57c) 
+    drop-shadow(0 0 0.5em #ff7fff95);
+  transform: scale(1.4);
+}
+
+.logo.react:hover {
+  filter: 
+    drop-shadow(0 0 3em #ab29bc5e) 
+    drop-shadow(0 0 1.5em #ab29bc83);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.producto-img {
+  transition: transform 0.3s ease;
+  /* Opcional: para que no se salga del contenedor si está dentro de uno con overflow */
+  display: block;
+  max-width: 100%;
+}
+
+.producto-img:hover {
+  transform: scale(1.05); /* agranda un 5% */
+  cursor: pointer; /* opcional, para indicar que es interactiva */
+}
+
+
+.boton-productos {
+  background-color: rgba(178, 40, 118, 0.651) !important;
+  border: none !important;
+  color: white !important;
+  margin-top: 15px;
+}
+
+.boton-productos:hover {
+  background-color: rgba(178, 40, 118, 0.85) !important; /* al 100% cuando pasás el mouse */
+}
+
+
+/* .boton-login{
+  background-color: rgba(213, 168, 204, 0.877) !important;
+  color: white !important;
+  border: none !important;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+.boton-login:hover {
+  background-color: rgba(254, 153, 211, 1) !important;
+  color: white !important;
+} */
+
+.nav-link {
+  position: relative;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fe99d3; /* rosa/transparente */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #fe99d3;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+body {
+  background-color: rgba(14,16,15,255) !important;
+  color: #ffffff !important;
+}
+
+.card {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+  border: 1px solid #333 !important;
+}
+
+button {
+  background-color: #b04a78 !important;
+  color: #ffffff !important;
+}
+
+
+
+.navbarestilo{
+  background-color: rgb(42, 45, 46) !important;
+}
+
+.botonCarritoEstilo{
+  background-color: rgba(250, 251, 251, 0.079) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.botonCarritoEstilo:hover{
+  background-color: #b04a78 !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.inputForEstilos{
+  background-color: rgba(250, 251, 251, 0.079) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.iniciarSesionEstilos{
+  background-color: rgba(250, 251, 251, 0.079) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.verPedidosEstilos{
+  background-color: rgba(250, 251, 251, 0) !important;
+  color: rgb(255, 255, 255) !important;
+  border-color: rgba(250, 251, 251, 0.43) !important
+}
+
+.cardsEstilos{
+  background-color: rgba(250, 251, 251, 0.034) !important;
+  color: rgb(255, 255, 255) !important;
+  border-color: rgba(250, 251, 251, 0.43) !important
+}
+
+@media (max-width: 768px) {
+  #root {
+    max-width: 100% !important; /* Usar todo el ancho de la pantalla */
+    padding: 1rem; /* Reducir el padding para aprovechar más espacio */
+  }
+  
+  .container {
+    max-width: 100% !important; /* Que el container use todo el ancho en móvil */
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* Opcional: Agrandar un poco los productos, si están dentro de columnas */
+  .col-md-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+
+@media (max-width: 575px) {
+
+  #root {
+    padding: 6px !important;
+  }
+
+  .card{
+    padding: 8px !important;
+    width: 100% !important;
+  }
+  .row>* {
+    padding: 0px !important;
+  }
+}
+
+/* Estilos para las categorías */
+.categorias-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.categoria-link:hover {
+  background-color: rgba(12, 188, 233, 0.1);
+  color: #0cbce9 !important;
+}
+
+/* Ajustes de diseño */
+.titulosprincipales {
+  color: #333;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #0cbce9;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+.categorias-accordion .categorias-header {
+  background-color: #f8f9fa !important;
+  border-bottom: 1px solid #dee2e6 !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s !important;
+}
+
+.categorias-accordion .categorias-header:hover {
+  background-color: #e9ecef !important;
+}
+
+.categoria-item {
+  transition: all 0.2s !important;
+  border-radius: 4px !important;
+  margin: 2px 0 !important;
+}
+
+.categoria-item:hover {
+  background-color: #e9ecef !important;
+  transform: translateX(5px) !important;
+}
+
+.categorias-list::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.categorias-list::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+}
+
+.categorias-list::-webkit-scrollbar-thumb {
+  background: #888 !important;
+  border-radius: 4px !important;
+}
+
+.categorias-list::-webkit-scrollbar-thumb:hover {
+  background: #555 !important;
+}
+
+
+
+
+
+/* Categories panel */
+.categories-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  z-index: 1050;
+  width: 300px;
+  max-height: 70vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.2s;
+  border-bottom: 1px solid #eee;
+}
+
+.category-item:hover {
+  background: #f8f9fa;
+  text-decoration: none;
+}
+
+.category-item:last-child {
+  border-bottom: none;
+}
+
+/* Botones */
+.boton-login {
+  transition: all 0.3s ease;
+}
+
+.boton-login:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.botonCarritoEstilo {
+  transition: all 0.3s ease;
+}
+
+  /* App.css */
+/* Asegurar que las cards tengan tamaño consistente */
+.cardsEstilos {
+  width: 100%;
+  min-width: 250px;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+/* Forzar el mismo grid en todas las vistas */
+.justify-content-center > .col {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+
+/* Ajustar márgenes en mobile */
+@media (max-width: 768px) {
+  .mb-4.d-flex {
+    justify-content: center !important;
+  }
+  
+  .cardsEstilos {
+    max-width: 100%;
+  }
+}
+
+/* Botón flotante del carrito para móvil */
+.floating-cart-button {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 50% !important;
+  background-color: #fe99d3 !important;
+  color: white !important;
+  display: none !important; /* Por defecto oculto */
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 12px rgba(254, 153, 211, 0.3) !important;
+  transition: transform 0.2s ease !important;
+  z-index: 1060 !important;
+  border: none !important;
+}
+
+.floating-cart-button:hover {
+  transform: scale(1.1) !important;
+}
+
+.floating-cart-button .badge {
+  position: absolute !important;
+  top: -8px !important;
+  right: -8px !important;
+  background-color: #dc3545 !important;
+  border: 2px solid #fe99d3 !important;
+  border-radius: 50% !important;
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.75rem !important;
+}
+
+/* Mostrar el botón flotante solo en xs */
+@media (max-width: 575px) {
+  .floating-cart-button {
+  display: flex !important;
+  }
+  
+  /* Ocultar el botón normal del carrito en móvil */
+  .botonCarritoEstilo {
+    display: none !important;
+  }
+}
+
+/* Estilos para el panel de categorías en tablet/desktop */
+@media (min-width: 576px) {
+  .categories-panel {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background: rgb(10, 10, 11) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    min-width: 250px !important;
+    z-index: 1050 !important;
+  }
+
+  .category-item {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0.75rem 1rem !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
+    background: transparent !important;
+    transition: background-color 0.2s ease !important;
+  }
+
+  .category-item:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: white !important;
+  }
+}
+
+/* Menú móvil moderno */
+.mobile-menu {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+    width: 100% !important;
+  height: 100vh !important;
+  background-color: rgb(10, 10, 11) !important;
+  z-index: 2000 !important;
+  transform: translateY(-100%) !important;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  opacity: 0 !important;
+}
+
+.mobile-menu.show {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+.mobile-menu-container {
+  height: 100% !important;
+    display: flex !important;
+  flex-direction: column !important;
+  padding: 0 !important;
+  background-color: rgb(10, 10, 11) !important;
+  }
+
+.mobile-menu-header {
+    display: flex !important;
+  justify-content: space-between !important;
+    align-items: center !important;
+  padding: 1rem 1.5rem !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.mobile-menu-close {
+  background: transparent !important;
+  border: none !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 1.5rem !important;
+  padding: 0.5rem !important;
+  cursor: pointer !important;
+  transition: color 0.2s ease !important;
+  margin-right: -0.5rem !important;
+}
+
+.mobile-menu-close:hover {
+  color: white !important;
+}
+
+.mobile-menu-content {
+  flex: 1 !important;
+  overflow-y: auto !important;
+  padding: 1.5rem !important;
+  background-color: rgb(10, 10, 11) !important;
+}
+
+.mobile-menu-nav {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.mobile-menu-item {
+  margin-bottom: 1rem !important;
+}
+
+.mobile-menu-link {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 1.2rem 1.25rem !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-decoration: none !important;
+  font-size: 1.1rem !important;
+  border-radius: 12px !important;
+  transition: all 0.2s ease !important;
+  background: rgba(0, 0, 0, 0.4) !important;
+  border: none !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link:active {
+  background: rgba(0, 0, 0, 0.6) !important;
+  color: white !important;
+}
+
+.mobile-menu-categories {
+  background: rgb(5, 5, 6) !important;
+  border-radius: 12px !important;
+  margin-top: 0.5rem !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+  max-height: calc(100vh - 250px) !important; /* Mucho más alto para mostrar más categorías */
+  overflow-y: auto !important;
+}
+
+.mobile-category-item {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 1rem 1.25rem !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  text-decoration: none !important;
+  font-size: 1rem !important;
+  transition: all 0.2s ease !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
+  background: rgb(5, 5, 6) !important;
+}
+
+.mobile-category-item:last-child {
+  border-bottom: none !important;
+}
+
+.mobile-category-item:hover {
+  background: rgba(0, 0, 0, 0.6) !important;
+  color: white !important;
+}
+
+.mobile-category-count {
+  background: rgba(254, 153, 211, 0.1) !important;
+  color: #fe99d3 !important;
+  padding: 0.25rem 0.75rem !important;
+  border-radius: 20px !important;
+  font-size: 0.85rem !important;
+}
+
+.mobile-menu-footer {
+  padding: 1.5rem !important;
+  margin-top: auto !important;
+  background: rgb(5, 5, 6) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.03) !important;
+}
+
+.mobile-menu-divider {
+  width: 20% !important;
+  margin: 0 auto 1rem !important;
+  border: none !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.03) !important;
+}
+
+.mobile-menu-admin {
+  color: rgba(255, 255, 255, 0.3) !important;
+  text-decoration: none !important;
+  font-size: 0.75rem !important;
+  text-transform: lowercase !important;
+  letter-spacing: 2px !important;
+  display: block !important;
+  text-align: center !important;
+  transition: color 0.2s ease !important;
+}
+
+.mobile-menu-admin:hover {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Personalización del scrollbar para el menú de categorías */
+.mobile-menu-categories::-webkit-scrollbar {
+  width: 4px !important;
+}
+
+.mobile-menu-categories::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+.mobile-menu-categories::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+.mobile-menu-categories::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Navbar toggle button */
+.navbar-toggler {
+  border: none !important;
+  padding: 0.5rem !important;
+  color: white !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.navbar-toggler:hover {
+  opacity: 0.8 !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Contenedor para el área sensible al hover */
+.admin-hover-area {
+  position: relative !important;
+  padding: 1.5rem !important;
+  margin: -1.5rem -1.5rem -1.5rem 0 !important; /* Solo margen negativo a la derecha */
+  margin-right: 1rem !important; /* Espacio explícito con el carrito */
+}
+
+/* Estilos para el enlace admin en desktop */
+.admin-link {
+  color: rgba(255, 255, 255, 0.3) !important;
+  text-decoration: none !important;
+    font-size: 0.7rem !important;
+  text-transform: lowercase !important;
+  letter-spacing: 2px !important;
+  position: absolute !important;
+  top: 50% !important;
+  right: 0 !important; /* Alinear a la derecha en vez de centrar */
+  transform: translateY(-50%) !important; /* Solo transformar en Y */
+  padding: 0.5rem 0 !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+}
+
+.admin-hover-area:hover .admin-link {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.admin-link::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0.3rem !important;
+  left: 0 !important; /* Alinear línea a la izquierda */
+  width: 0 !important;
+  height: 1px !important;
+  background: rgba(254, 153, 211, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.admin-link:hover {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.admin-link:hover::after {
+  width: 100% !important;
+}
