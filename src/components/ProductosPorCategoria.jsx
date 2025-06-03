@@ -23,7 +23,9 @@ const ProductosPorCategoria = () => {
         });
 
         if (producto) {
-          setCategoriaFormateada(producto.categoria.trim());
+          // Separar palabras cuando hay mayúsculas
+          const categoriaConEspacios = producto.categoria.trim().replace(/([A-Z])/g, ' $1').trim();
+          setCategoriaFormateada(categoriaConEspacios);
         }
       } catch (error) {
         console.error('Error al obtener la categoría:', error);
