@@ -14,7 +14,6 @@ const ProductosPorCategoria = () => {
         const response = await fetch('https://raw.githubusercontent.com/martinalejandronuniezcursor2/alebourgprueba/refs/heads/main/public/productosalebourgactulizados.json');
         const data = await response.json();
         
-        // Encontrar el primer producto con esta categoría
         const producto = data.find(p => {
           const categoriaURL = p.categoria.toLowerCase()
             .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -24,9 +23,7 @@ const ProductosPorCategoria = () => {
         });
 
         if (producto) {
-          // Separar palabras cuando hay mayúsculas
-          const textoFormateado = producto.categoria.replace(/([A-Z])/g, ' $1').trim();
-          setCategoriaFormateada(textoFormateado);
+          setCategoriaFormateada(producto.categoria.trim());
         }
       } catch (error) {
         console.error('Error al obtener la categoría:', error);
@@ -40,7 +37,7 @@ const ProductosPorCategoria = () => {
     <div className="container mt-4">
       <Row className="justify-content-center">
         <Col>
-          <h4 className="text-white titulosprincipales mb-4">
+          <h4 className="titulosprincipales mb-4">
             {categoriaFormateada || nombreCategoria}
           </h4>
           <ProductosLista categoria={nombreCategoria} />

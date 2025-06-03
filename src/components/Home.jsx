@@ -8,7 +8,7 @@ const Home = () => {
     <div className="container mt-4">
       <Row className="justify-content-center">
         <Col>
-          <h4 className="text-white titulosprincipales mb-4">Todos los productos</h4>
+          <h4 className="titulosprincipales mb-4">Todos los productos</h4>
           <ProductosLista />
         </Col>
       </Row>
