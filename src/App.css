@@ -673,3 +673,94 @@ button {
 .admin-link:hover::after {
   width: 100% !important;
 }
+
+/* Estilos para el dropdown de ordenamiento */
+.ordenamiento-dropdown .dropdown-toggle {
+  background: rgb(10, 10, 11) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.9rem !important;
+  border-radius: 8px !important;
+  min-width: 160px !important;
+}
+
+.ordenamiento-dropdown .dropdown-toggle:hover,
+.ordenamiento-dropdown .dropdown-toggle:focus {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.ordenamiento-dropdown .dropdown-menu {
+  background: rgb(10, 10, 11) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  margin-top: 0.5rem !important;
+}
+
+.ordenamiento-dropdown .dropdown-item {
+  color: rgba(255, 255, 255, 0.8) !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.9rem !important;
+}
+
+.ordenamiento-dropdown .dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: white !important;
+}
+
+@media (max-width: 575px) {
+  .ordenamiento-dropdown {
+    width: 100% !important;
+    margin-top: 0.5rem !important;
+  }
+  
+  .ordenamiento-dropdown .dropdown-toggle {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* Estilos para el buscador */
+.mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+@media (max-width: 575px) {
+  .mb-4 {
+    margin: 0.5rem auto !important;
+    max-width: 90% !important;
+  }
+
+  .input-group {
+    width: 100% !important;
+  }
+
+  .form-control, .input-group-text {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Estilos para el contenedor del buscador y ordenamiento */
+.buscador-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 575px) {
+  .buscador-container {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .buscador-container .flex-grow-1 {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .ordenamiento-dropdown {
+    width: 90% !important;
+    margin: 0.5rem auto !important;
+  }
+}
