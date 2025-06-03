@@ -13,7 +13,7 @@ const ProductosLista = ({ categoria = null }) => {
   const [ordenamiento, setOrdenamiento] = useState('');
 
   useEffect(() => {
-    fetch('https://raw.githubusercontent.com/martuargento/Alebourg/refs/heads/main/public/productosalebourgactulizados.json')
+    fetch('https://raw.githubusercontent.com/martinalejandronuniezcursor2/alebourgprueba/refs/heads/main/public/productosalebourgactulizados.json')
       .then(res => res.json())
       .then(data => {
         let filtrados = data;
