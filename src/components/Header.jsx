@@ -22,7 +22,7 @@ const Header = () => {
     setTimeout(() => {
       setShowMobileCategories(false);
       setIsClosing(false);
-    }, 200);
+    }, 350);
   };
 
   const handleToggleMobileMenu = () => {
