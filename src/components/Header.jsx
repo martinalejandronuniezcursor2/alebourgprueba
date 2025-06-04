@@ -13,8 +13,10 @@ const Header = () => {
   const [isClosing, setIsClosing] = useState(false);
   const [categorias, setCategorias] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const categoriesRef = useRef(null);
   const buttonRef = useRef(null);
+  const mobileMenuRef = useRef(null);
 
   const handleCloseMenu = () => {
     setIsClosing(true);
@@ -22,6 +24,19 @@ const Header = () => {
       setShowMobileCategories(false);
       setIsClosing(false);
     }, 300);
+  };
+
+  const toggleMobileMenu = () => {
+    if (mobileMenuOpen) {
+      const menu = document.getElementById('navbarMobile');
+      menu.classList.add('collapsing');
+      setTimeout(() => {
+        setMobileMenuOpen(false);
+        menu.classList.remove('collapsing');
+      }, 300);
+    } else {
+      setMobileMenuOpen(true);
+    }
   };
 
   // Cerrar categorías al hacer click fuera
@@ -53,7 +68,6 @@ const Header = () => {
           if (!producto.categoria) return;
           const categoria = producto.categoria.trim();
           if (categoria) {
-            // Separar palabras basadas en mayúsculas
             const categoriaSeparada = categoria.replace(/([A-Z])/g, ' $1').trim();
             categoriasMap[categoria] = (categoriasMap[categoria] || 0) + 1;
           }
@@ -104,10 +118,9 @@ const Header = () => {
         <button
           className="navbar-toggler d-sm-none"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarMobile"
+          onClick={toggleMobileMenu}
           aria-controls="navbarMobile"
-          aria-expanded="false"
+          aria-expanded={mobileMenuOpen}
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
@@ -186,8 +199,12 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Menu - Solo visible en xs */}
-        <div className="collapse navbar-collapse mobile-menu d-sm-none" id="navbarMobile">
+        {/* Mobile Menu */}
+        <div 
+          className={`mobile-menu ${mobileMenuOpen ? 'show' : ''}`} 
+          id="navbarMobile"
+          ref={mobileMenuRef}
+        >
           <div className="mobile-menu-container">
             <div className="mobile-menu-header">
               <Link className="navbar-brand" to="/">
@@ -195,8 +212,7 @@ const Header = () => {
               </Link>
               <button
                 className="mobile-menu-close"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarMobile"
+                onClick={toggleMobileMenu}
               >
                 <FaTimes />
               </button>
@@ -208,11 +224,7 @@ const Header = () => {
                   <Link 
                     to="/"
                     className="mobile-menu-link"
-                    onClick={() => {
-                      const menu = document.getElementById('navbarMobile');
-                      const bsCollapse = new bootstrap.Collapse(menu);
-                      bsCollapse.hide();
-                    }}
+                    onClick={toggleMobileMenu}
                   >
                     Productos
                   </Link>
@@ -259,48 +271,8 @@ const Header = () => {
                         borderRadius: '10px',
                         boxShadow: '0 0 20px rgba(0,0,0,0.5)',
                         border: '1px solid rgba(255,255,255,0.1)',
-                        animation: isClosing ? 'slideDown 0.3s ease-out forwards' : 'slideUp 0.3s ease-out forwards'
+                        animation: isClosing ? 'slideUp 0.3s ease-out forwards' : 'slideDown 0.3s ease-out forwards'
                       }}>
-                        <style>
-                          {`
-                            @keyframes slideUp {
-                              from {
-                                opacity: 0;
-                                transform: translateY(50vh) scale(0.9);
-                              }
-                              to {
-                                opacity: 1;
-                                transform: translateY(0) scale(1);
-                              }
-                            }
-                            @keyframes slideDown {
-                              from {
-                                opacity: 1;
-                                transform: translateY(0) scale(1);
-                              }
-                              to {
-                                opacity: 0;
-                                transform: translateY(50vh) scale(0.9);
-                              }
-                            }
-                            @keyframes fadeIn {
-                              from {
-                                opacity: 0;
-                              }
-                              to {
-                                opacity: 1;
-                              }
-                            }
-                            @keyframes fadeOut {
-                              from {
-                                opacity: 1;
-                              }
-                              to {
-                                opacity: 0;
-                              }
-                            }
-                          `}
-                        </style>
                         <div style={{
                           display: 'flex',
                           justifyContent: 'space-between',
@@ -356,9 +328,7 @@ const Header = () => {
                                 }}
                                 onClick={() => {
                                   setShowMobileCategories(false);
-                                  const menu = document.getElementById('navbarMobile');
-                                  const bsCollapse = new bootstrap.Collapse(menu);
-                                  bsCollapse.hide();
+                                  toggleMobileMenu();
                                 }}
                               >
                                 <span>{categoria.nombre}</span>
@@ -383,9 +353,7 @@ const Header = () => {
                 <button 
                   onClick={() => {
                     manejarLogout();
-                    const menu = document.getElementById('navbarMobile');
-                    const bsCollapse = new bootstrap.Collapse(menu);
-                    bsCollapse.hide();
+                    toggleMobileMenu();
                   }}
                   className="mobile-menu-admin"
                 >
@@ -395,8 +363,7 @@ const Header = () => {
                 <Link 
                   to="/login" 
                   className="mobile-menu-admin"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarMobile"
+                  onClick={toggleMobileMenu}
                 >
                   admin
                 </Link>
@@ -406,7 +373,7 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Mobile Floating Cart Button - Solo visible en xs */}
+      {/* Mobile Floating Cart Button */}
       <Link 
         to="/verpedido" 
         className="floating-cart-button d-sm-none"
