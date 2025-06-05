@@ -27,6 +27,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   /* Quité display:flex y place-items */
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
 }
 
 h1 {
@@ -64,5 +66,74 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+:root[data-theme="dark"] {
+  --background-color: rgba(14,16,15,255);
+  --text-color: #ffffff;
+  --card-bg: rgba(250, 251, 251, 0.034);
+  --card-border: rgba(250, 251, 251, 0.43);
+  --navbar-bg: rgb(42, 45, 46);
+  --button-bg: #b04a78;
+  --button-hover: rgba(178, 40, 118, 0.85);
+  --input-bg: rgba(250, 251, 251, 0.079);
+}
+
+:root[data-theme="light"] {
+  --background-color: #ffffff;
+  --text-color: #213547;
+  --card-bg: #f8f9fa;
+  --card-border: #dee2e6;
+  --navbar-bg: #f8f9fa;
+  --button-bg: #b04a78;
+  --button-hover: rgba(178, 40, 118, 0.85);
+  --input-bg: #ffffff;
+}
+
+.card {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--card-border) !important;
+}
+
+.navbarestilo {
+  background-color: var(--navbar-bg) !important;
+}
+
+.inputForEstilos {
+  background-color: var(--input-bg) !important;
+  color: var(--text-color) !important;
+}
+
+.theme-toggle-btn {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-color) !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  padding: 0 !important;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: scale(1.05) !important;
+}
+
+/* Estilos específicos para móvil */
+.mobile-menu-footer .theme-toggle-btn {
+  width: 45px !important;
+  height: 45px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: none !important;
+}
+
+.mobile-menu-footer .theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
 }
 

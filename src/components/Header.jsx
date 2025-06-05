@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaShoppingCart, FaChevronDown, FaTimes } from 'react-icons/fa';
 import { usarCarrito } from '../context/CarritoContexto';
 import logo from '../assets/logo.png';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const { carrito } = usarCarrito();
@@ -162,6 +163,7 @@ const Header = () => {
           </ul>
 
           <div className="d-flex align-items-center gap-3">
+            <ThemeToggle />
             {estaLogueado ? (
               <button 
                 className="btn btn-outline-danger"
@@ -381,6 +383,9 @@ const Header = () => {
 
             <div className="mobile-menu-footer">
               <hr className="mobile-menu-divider" />
+              <div className="d-flex justify-content-center align-items-center gap-3 mb-3">
+                <ThemeToggle />
+              </div>
               {estaLogueado ? (
                 <button 
                   onClick={() => {
