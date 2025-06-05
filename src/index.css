@@ -180,52 +180,26 @@ button:focus-visible {
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
-  height: 100vh !important;
-  background-color: var(--mobile-menu-bg) !important;
-  display: flex !important;
-  flex-direction: column !important;
-  overflow: hidden !important; /* Previene scroll en el contenedor principal */
-}
-
-.mobile-menu-header {
-  padding: 1rem !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-  flex-shrink: 0 !important; /* Previene que el header se encoja */
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
 }
 
 .mobile-menu-content {
-  flex: 1 !important;
+  height: auto !important;
+  min-height: calc(100% - 70px) !important;
   display: flex !important;
   flex-direction: column !important;
   padding: 1rem !important;
-  overflow: hidden !important; /* Previene scroll en el contenido principal */
 }
 
-.mobile-menu-nav {
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Estilos para el panel de categorías */
-.mobile-menu-categories {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  background-color: var(--mobile-menu-bg) !important;
-  z-index: 1060 !important;
-  overflow-y: auto !important; /* Permite scroll solo en el panel de categorías */
-  -webkit-overflow-scrolling: touch !important;
-  padding: 1rem !important;
+.mobile-menu-header {
+  border-bottom: 1px solid var(--mobile-menu-border) !important;
+  background-color: var(--mobile-menu-item-bg) !important;
 }
 
 .mobile-menu-footer {
-  padding: 1rem !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-  margin-top: auto !important;
-  flex-shrink: 0 !important; /* Previene que el footer se encoja */
+  background-color: var(--mobile-menu-bg) !important;
+  border-top: 1px solid var(--mobile-menu-border) !important;
 }
 
 .mobile-menu-admin {
@@ -247,6 +221,10 @@ button:focus-visible {
 }
 
 /* Estilos para el panel de categorías móvil */
+.mobile-menu-categories {
+  background: var(--mobile-menu-bg) !important;
+}
+
 .mobile-category-item {
   background: var(--mobile-menu-bg) !important;
   color: var(--text-color) !important;
@@ -275,6 +253,10 @@ button:focus-visible {
 .mobile-menu-nav button,
 .mobile-menu-nav a {
   color: var(--text-color) !important;
+}
+
+.mobile-menu-header {
+  background-color: var(--mobile-menu-item-bg) !important;
 }
 
 /* Ajuste para el texto de carga */
