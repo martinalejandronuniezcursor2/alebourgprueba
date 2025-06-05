@@ -238,7 +238,11 @@ const Header = () => {
               </button>
             </div>
 
-            <div className="mobile-menu-content">
+            <div className="mobile-menu-content" style={{ 
+              display: 'flex', 
+              flexDirection: 'column',
+              height: '100%'
+            }}>
               <ul className="mobile-menu-nav">
                 <li className="mobile-menu-item">
                   <Link 
@@ -411,6 +415,8 @@ const Header = () => {
                   </div>
                 </li>
               </ul>
+
+              <div style={{ flex: 1 }}></div>
 
               <div className="mobile-menu-footer">
                 <hr className="mobile-menu-divider" />
