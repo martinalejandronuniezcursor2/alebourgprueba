@@ -222,7 +222,7 @@ const Header = () => {
         {/* Mobile Menu - Solo visible en xs */}
         <div className={`mobile-menu d-sm-none ${showMobileMenu ? 'show' : ''}`}>
           <div className="mobile-menu-container" style={{ 
-            height: '70vh',
+            height: '85vh',
             backgroundColor: '#1e1e1e',
             borderRadius: '0 0 20px 20px'
           }}>
