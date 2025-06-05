@@ -416,7 +416,7 @@ const Header = () => {
                 </li>
               </ul>
 
-              <div style={{ flex: 1 }}></div>
+              <div style={{ flex: 0.5 }}></div>
 
               <div className="mobile-menu-footer">
                 <hr className="mobile-menu-divider" />
