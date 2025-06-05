@@ -221,7 +221,11 @@ const Header = () => {
 
         {/* Mobile Menu - Solo visible en xs */}
         <div className={`mobile-menu d-sm-none ${showMobileMenu ? 'show' : ''}`}>
-          <div className="mobile-menu-container">
+          <div className="mobile-menu-container" style={{ 
+            height: '70vh',
+            backgroundColor: '#1e1e1e',
+            borderRadius: '0 0 20px 20px'
+          }}>
             <div className="mobile-menu-header">
               <Link className="navbar-brand" to="/">
                 <img 
@@ -416,7 +420,7 @@ const Header = () => {
                 </li>
               </ul>
 
-              <div style={{ flex: 0.5 }}></div>
+              <div style={{ flex: 0.2 }}></div>
 
               <div className="mobile-menu-footer">
                 <hr className="mobile-menu-divider" />

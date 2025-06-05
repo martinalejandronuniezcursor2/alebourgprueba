@@ -165,58 +165,31 @@ button:focus-visible {
 }
 
 /* Estilos del menú móvil */
-.mobile-menu-link {
-  color: var(--text-color) !important;
-  background: var(--mobile-menu-item-bg) !important;
-  border: 1px solid var(--mobile-menu-border) !important;
-}
-
-.mobile-menu-link:hover {
-  background: var(--mobile-menu-item-bg) !important;
-  border-color: var(--brand-accent) !important;
-  filter: brightness(98%) !important;
-}
-
-.category-item {
-  color: var(--text-color) !important;
-  border-bottom: 1px solid var(--mobile-menu-border) !important;
-  transition: all 0.2s ease !important;
-}
-
-.category-item:hover {
-  background-color: var(--mobile-menu-item-bg) !important;
-  color: var(--brand-accent) !important;
-}
-
-.category-item span:last-child {
-  color: var(--text-color-secondary) !important;
-}
-
-/* Ajustes para el menú de categorías */
-.categories-panel {
-  background: var(--mobile-menu-bg) !important;
-  border: 1px solid var(--mobile-menu-border) !important;
+.mobile-menu {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 90% !important;
+  background-color: var(--mobile-menu-bg) !important;
+  z-index: 1050 !important;
+  transform: translateY(-100%) !important;
+  transition: transform 0.3s ease-in-out !important;
+  border: none !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
-.mobile-menu-footer .theme-toggle-btn {
-  width: 45px !important;
-  height: 45px !important;
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: none !important;
-}
-
-.mobile-menu-footer .theme-toggle-btn:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
-}
-
-/* Estilos del menú móvil */
-.mobile-menu {
-  background-color: var(--mobile-menu-bg) !important;
+.mobile-menu.show {
+  transform: translateY(0) !important;
 }
 
 .mobile-menu-container {
+  height: 100% !important;
+  overflow-y: auto !important;
+  padding: 1rem !important;
+  border-radius: 0 0 20px 20px !important;
   background-color: var(--mobile-menu-bg) !important;
+  border: none !important;
 }
 
 .mobile-menu-header {
