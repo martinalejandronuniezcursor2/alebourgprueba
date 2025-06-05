@@ -31,8 +31,10 @@ const Header = () => {
     if (showMobileMenu) {
       setShowMobileMenu(false);
       setShowMobileCategories(false);
+      document.body.style.overflow = 'auto';
     } else {
       setShowMobileMenu(true);
+      document.body.style.overflow = 'hidden';
     }
   };
 
@@ -106,6 +108,13 @@ const Header = () => {
     });
 
     return () => observer.disconnect();
+  }, []);
+
+  // Limpiar el estilo del body al desmontar el componente
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
   }, []);
 
   const manejarLogout = () => {
