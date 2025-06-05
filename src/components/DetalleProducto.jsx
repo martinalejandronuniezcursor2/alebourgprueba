@@ -174,19 +174,18 @@ const DetalleProducto = () => {
                   <Button 
                     onClick={manejarAgregar}
                     size="lg"
+                    className="boton-productos"
                     style={{
                       padding: '1rem',
                       fontSize: 'clamp(1rem, 4vw, 1.2rem)',
                       fontWeight: '600',
-                      backgroundColor: '#333',
-                      border: 'none',
                       transition: 'all 0.2s ease'
                     }}
                   >
                     Agregar al carrito
                   </Button>
                   <Button 
-                    variant="outline-secondary"
+                    className="boton-productos"
                     onClick={() => navigate(-1)}
                     style={{
                       padding: '0.75rem',

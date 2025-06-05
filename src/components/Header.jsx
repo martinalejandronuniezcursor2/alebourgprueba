@@ -15,6 +15,7 @@ const Header = () => {
   const [isClosing, setIsClosing] = useState(false);
   const [categorias, setCategorias] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [currentTheme, setCurrentTheme] = useState(document.documentElement.getAttribute('data-theme'));
   const categoriesRef = useRef(null);
   const buttonRef = useRef(null);
 
@@ -89,6 +90,24 @@ const Header = () => {
     fetchCategorias();
   }, []);
 
+  // Escuchar cambios en el tema
+  useEffect(() => {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'data-theme') {
+          setCurrentTheme(document.documentElement.getAttribute('data-theme'));
+        }
+      });
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme']
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const manejarLogout = () => {
     localStorage.removeItem('logueado');
     navigate('/');
@@ -109,7 +128,11 @@ const Header = () => {
       {/* Desktop Navigation */}
       <nav className="navbar navbar-expand-sm px-4 navbarestilo">
         <Link className="navbar-brand" to="/">
-          <img src={logo} alt="Alebourg" style={{ height: '55px', objectFit: 'contain' }} />
+          <img 
+            src={document.documentElement.getAttribute('data-theme') === 'light' ? '/logolight.png' : logo} 
+            alt="Alebourg" 
+            style={{ height: '55px', objectFit: 'contain' }} 
+          />
         </Link>
 
         <button
@@ -163,7 +186,6 @@ const Header = () => {
           </ul>
 
           <div className="d-flex align-items-center gap-3">
-            <ThemeToggle />
             {estaLogueado ? (
               <button 
                 className="btn btn-outline-danger"
@@ -181,7 +203,7 @@ const Header = () => {
                 </Link>
               </div>
             )}
-            
+            <ThemeToggle />
             {/* Desktop Cart Button */}
             <Link 
               to="/verpedido" 
@@ -202,7 +224,11 @@ const Header = () => {
           <div className="mobile-menu-container">
             <div className="mobile-menu-header">
               <Link className="navbar-brand" to="/">
-                <img src={logo} alt="Alebourg" style={{ height: '40px', objectFit: 'contain' }} />
+                <img 
+                  src={document.documentElement.getAttribute('data-theme') === 'light' ? '/logolight.png' : logo} 
+                  alt="Alebourg" 
+                  style={{ height: '40px', objectFit: 'contain' }} 
+                />
               </Link>
               <button
                 className="mobile-menu-close"
@@ -246,7 +272,7 @@ const Header = () => {
                           left: 0,
                           right: 0,
                           bottom: 0,
-                          backgroundColor: 'rgba(0,0,0,0.5)',
+                          backgroundColor: 'var(--mobile-overlay-bg)',
                           zIndex: 9998,
                           animation: isClosing ? 'fadeOut 0.12s ease-out forwards' : 'fadeIn 0.12s ease-out forwards'
                         }} 
@@ -258,13 +284,13 @@ const Header = () => {
                         left: '20px',
                         right: '20px',
                         bottom: '20px',
-                        backgroundColor: '#1e1e1e',
+                        backgroundColor: 'var(--mobile-menu-bg)',
                         zIndex: 9999,
                         padding: '20px',
                         overflowY: 'auto',
                         borderRadius: '10px',
                         boxShadow: '0 0 20px rgba(0,0,0,0.5)',
-                        border: '1px solid rgba(255,255,255,0.1)',
+                        border: '1px solid var(--mobile-menu-border)',
                         animation: isClosing ? 'slideDown 0.12s ease-out forwards' : 'slideUp 0.12s ease-out forwards'
                       }}>
                         <style>
@@ -312,32 +338,32 @@ const Header = () => {
                           justifyContent: 'space-between',
                           alignItems: 'center',
                           marginBottom: '20px',
-                          borderBottom: '1px solid rgba(255,255,255,0.1)',
+                          borderBottom: '1px solid var(--mobile-menu-border)',
                           paddingBottom: '10px'
                         }}>
                           <h4 style={{ 
-                            color: 'white', 
+                            color: 'var(--text-color)', 
                             margin: 0,
                             fontSize: '1.2rem',
                             fontWeight: '500'
                           }}>Categorías</h4>
                           <button 
                             onClick={handleCloseMenu}
+                            className="categories-close"
                             style={{
                               background: 'none',
-                              border: 'none',
-                              color: 'white',
-                              fontSize: '24px',
                               padding: '10px',
                               cursor: 'pointer',
-                              opacity: '0.8'
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center'
                             }}
                           >
                             <FaTimes />
                           </button>
                         </div>
                         {loading ? (
-                          <div className="p-3 text-white">Cargando...</div>
+                          <div className="p-3" style={{ color: 'var(--text-color)' }}>Cargando...</div>
                         ) : (
                           <div style={{
                             display: 'flex',
@@ -353,9 +379,9 @@ const Header = () => {
                                   justifyContent: 'space-between',
                                   alignItems: 'center',
                                   padding: '12px 15px',
-                                  backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                                  backgroundColor: 'var(--mobile-menu-item-bg)',
                                   borderRadius: '8px',
-                                  color: 'white',
+                                  color: 'var(--text-color)',
                                   textDecoration: 'none',
                                   transition: 'all 0.2s ease',
                                   fontSize: '0.95rem'
@@ -367,7 +393,8 @@ const Header = () => {
                               >
                                 <span>{categoria.nombre}</span>
                                 <span style={{
-                                  color: '#999',
+                                  color: 'var(--text-color)',
+                                  opacity: '0.6',
                                   fontSize: '0.9em'
                                 }}>{categoria.cantidad}</span>
                               </Link>

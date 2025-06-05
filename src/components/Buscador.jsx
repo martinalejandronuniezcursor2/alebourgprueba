@@ -12,7 +12,7 @@ const Buscador = ({ onBuscar }) => {
   };
 
   return (
-    <div className="mb-4">
+    <div className="mb-3">
       <InputGroup>
         <InputGroup.Text 
           style={{ 

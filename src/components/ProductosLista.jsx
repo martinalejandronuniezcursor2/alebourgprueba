@@ -85,7 +85,7 @@ const ProductosLista = ({ categoria = null }) => {
 
   return (
     <Container fluid className="p-0">
-      <div className={`d-flex flex-column flex-sm-row align-items-${categoria ? 'start' : 'center'} gap-2 mb-4 buscador-container px-2`}>
+      <div className={`d-flex flex-column flex-sm-row align-items-${categoria ? 'start' : 'center'} gap-2 mb-3 buscador-container px-2`}>
         <div className="flex-grow-1">
           <Buscador onBuscar={setBusqueda} />
         </div>
@@ -125,9 +125,8 @@ const ProductosLista = ({ categoria = null }) => {
           {hayMasProductos && (
             <div className="text-center mt-4 mb-4">
               <Button 
-                variant="outline-light" 
+                className="boton-productos px-4 py-2"
                 onClick={cargarMasProductos}
-                className="px-4 py-2"
               >
                 Ver más productos
               </Button>
