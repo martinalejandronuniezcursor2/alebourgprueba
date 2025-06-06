@@ -189,7 +189,7 @@ const DetalleProducto = () => {
       <style>
         {`
           @media (max-width: 768px) {
-            /* Eliminar todos los espacios */
+            /* Eliminar todos los espacios y efectos visuales */
             .product-details {
               border: none !important;
               box-shadow: none !important;
@@ -207,6 +207,14 @@ const DetalleProducto = () => {
               padding: 1rem !important;
               background: none !important;
               background-color: transparent !important;
+              box-shadow: none !important;
+              outline: none !important;
+            }
+            .precio-container * {
+              border: none !important;
+              box-shadow: none !important;
+              outline: none !important;
+              background: none !important;
             }
             .categoria-container {
               margin: 0 !important;
@@ -222,9 +230,13 @@ const DetalleProducto = () => {
             
             /* Estilos específicos para modo claro */
             [data-theme="light"] .product-details,
-            [data-theme="light"] .precio-container {
+            [data-theme="light"] .precio-container,
+            [data-theme="light"] .precio-container * {
               background: none !important;
               background-color: transparent !important;
+              border: none !important;
+              box-shadow: none !important;
+              outline: none !important;
             }
             
             /* Estilos específicos para modo oscuro */
