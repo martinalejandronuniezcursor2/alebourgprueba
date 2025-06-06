@@ -18,10 +18,20 @@ const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className="theme-toggle-btn"
-      aria-label="Cambiar tema"
-      title="Cambiar tema"
+      aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+      title={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
     >
-      {isDark ? <FaSun size={20} /> : <FaMoon size={20} />}
+      {isDark ? (
+        <>
+          <FaSun size={22} />
+          <span className="theme-text">Tema claro</span>
+        </>
+      ) : (
+        <>
+          <FaMoon size={22} />
+          <span className="theme-text">Tema oscuro</span>
+        </>
+      )}
     </button>
   );
 };

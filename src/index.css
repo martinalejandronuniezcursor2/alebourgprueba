@@ -153,18 +153,47 @@ button:focus-visible {
 }
 
 .theme-toggle-btn {
-  background: var(--mobile-menu-item-bg) !important;
-  border: 1px solid var(--mobile-menu-border) !important;
-  color: var(--text-color) !important;
+  min-width: 120px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+  padding: 0 12px !important;
+  font-size: 0.85rem !important;
 }
 
-.theme-toggle-btn:hover {
-  border-color: var(--brand-accent) !important;
-  color: var(--brand-accent) !important;
-  background: rgba(252, 162, 222, 0.05) !important;
+.theme-text {
+  font-weight: 500 !important;
 }
 
-/* Estilos del menú móvil */
+/* Modo claro */
+[data-theme="light"] .theme-toggle-btn {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+[data-theme="light"] .theme-toggle-btn:hover {
+  background-color: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Modo oscuro */
+[data-theme="dark"] .theme-toggle-btn {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .theme-toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Estilos para el menú móvil */
 .mobile-menu {
   position: fixed !important;
   top: 0 !important;
@@ -528,6 +557,30 @@ button:focus-visible {
   /* Ocultar el botón normal del carrito en móvil */
   .botonCarritoEstilo {
     display: none !important;
+  }
+
+  .theme-toggle-btn {
+    width: auto !important;
+    margin: 10rem auto 0.5rem auto !important;
+    min-width: 160px !important;
+  }
+
+  .theme-toggle-btn svg {
+    margin-right: 4px !important;
+  }
+
+  /* Modo claro en mobile */
+  [data-theme="light"] .mobile-menu .theme-toggle-btn {
+    background-color: #f1f5f9 !important;
+    color: #1e293b !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+
+  /* Modo oscuro en mobile */
+  [data-theme="dark"] .mobile-menu .theme-toggle-btn {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
   }
 }
 
