@@ -76,7 +76,8 @@ const DetalleProducto = () => {
         <div style={{
           backgroundColor: 'transparent',
           borderRadius: '10px',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          boxShadow: '0 0 10px rgba(0, 0, 0, 0.05)'
         }}>
           <Row className="g-0">
             <Col xs={12} lg={8}>
@@ -85,7 +86,8 @@ const DetalleProducto = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                padding: '1.5rem',
+                padding: '1rem',
+                background: 'white',
                 minHeight: '30vh'
               }}>
                 <img
@@ -103,7 +105,8 @@ const DetalleProducto = () => {
             <Col xs={12} lg={4}>
               <div className="product-details" style={{
                 padding: '1.5rem',
-                height: '100%'
+                height: '100%',
+                background: 'white'
               }}>
                 <h2 style={{
                   fontSize: 'clamp(1.3rem, 4vw, 1.8rem)',
@@ -116,9 +119,10 @@ const DetalleProducto = () => {
                   marginBottom: '1.5rem',
                   position: 'relative',
                   padding: '1.5rem',
-                  backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                  backgroundColor: 'rgba(0, 0, 0, 0.03)',
                   borderRadius: '8px',
-                  textAlign: 'center'
+                  textAlign: 'center',
+                  border: '1px solid rgba(0, 0, 0, 0.05)'
                 }}>
                   <div style={{
                     position: 'absolute',
