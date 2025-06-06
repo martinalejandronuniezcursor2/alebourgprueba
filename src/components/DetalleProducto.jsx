@@ -13,6 +13,9 @@ const DetalleProducto = () => {
   const { agregarAlCarrito } = usarCarrito();
 
   useEffect(() => {
+    // Hacer scroll al inicio cuando el componente se monta
+    window.scrollTo(0, 0);
+    
     const fetchProducto = async () => {
       try {
         const response = await fetch('https://raw.githubusercontent.com/martinalejandronuniezcursor2/alebourgprueba/refs/heads/main/public/productosalebourgactulizados.json');
