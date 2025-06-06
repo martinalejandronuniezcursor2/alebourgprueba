@@ -65,14 +65,13 @@ const DetalleProducto = () => {
 
   return (
     <Container fluid className="p-0">
-      <div className="product-container" style={{
-        backgroundColor: 'rgba(0, 0, 0, 0.2)',
+      <div style={{
         margin: '0 auto',
         minHeight: '100vh',
         padding: '1rem'
       }}>
         <div style={{
-          backgroundColor: 'rgba(255, 255, 255, 0.05)',
+          backgroundColor: 'transparent',
           borderRadius: '10px',
           overflow: 'hidden'
         }}>
@@ -83,7 +82,7 @@ const DetalleProducto = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                padding: '0.5rem',
+                padding: '1.5rem',
                 minHeight: '30vh'
               }}>
                 <img
@@ -100,13 +99,13 @@ const DetalleProducto = () => {
             </Col>
             <Col xs={12} lg={4}>
               <div className="product-details" style={{
-                padding: '1rem',
+                padding: '1.5rem',
                 height: '100%'
               }}>
                 <h2 style={{
                   fontSize: 'clamp(1.3rem, 4vw, 1.8rem)',
                   fontWeight: '600',
-                  marginBottom: '1rem',
+                  marginBottom: '1.5rem',
                   textAlign: 'center'
                 }}>{producto.titulo}</h2>
                 
@@ -114,22 +113,20 @@ const DetalleProducto = () => {
                   marginBottom: '1.5rem',
                   position: 'relative',
                   padding: '1.5rem',
-                  background: 'linear-gradient(145deg, rgba(0,255,0,0.05) 0%, rgba(0,0,0,0) 100%)',
-                  borderRadius: '10px',
-                  border: '1px solid rgba(0,255,0,0.15)',
+                  backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                  borderRadius: '8px',
                   textAlign: 'center'
                 }}>
                   <div style={{
                     position: 'absolute',
                     top: '10px',
                     right: '10px',
-                    background: '#00cc44',
+                    backgroundColor: '#00cc44',
                     color: 'black',
                     padding: '4px 12px',
                     borderRadius: '20px',
                     fontSize: '0.9rem',
-                    fontWeight: 'bold',
-                    transform: 'rotate(5deg)'
+                    fontWeight: 'bold'
                   }}>
                     ¡Disponible!
                   </div>
@@ -143,9 +140,7 @@ const DetalleProducto = () => {
                   <div style={{
                     fontSize: 'clamp(2.5rem, 8vw, 3.5rem)',
                     fontWeight: '800',
-                    color: '#00ff44',
-                    textShadow: '0 0 15px rgba(0,255,68,0.3)',
-                    lineHeight: '1'
+                    color: '#00ff44'
                   }}>
                     ${precioAjustado}
                   </div>
@@ -163,7 +158,7 @@ const DetalleProducto = () => {
                   <p style={{
                     margin: '0',
                     padding: '8px 16px',
-                    background: 'rgba(255, 255, 255, 0.05)',
+                    backgroundColor: 'rgba(0, 0, 0, 0.2)',
                     borderRadius: '20px',
                     display: 'inline-block',
                     fontSize: '0.9rem'
@@ -178,8 +173,7 @@ const DetalleProducto = () => {
                     style={{
                       padding: '1rem',
                       fontSize: 'clamp(1rem, 4vw, 1.2rem)',
-                      fontWeight: '600',
-                      transition: 'all 0.2s ease'
+                      fontWeight: '600'
                     }}
                   >
                     Agregar al carrito
