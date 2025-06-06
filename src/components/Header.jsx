@@ -24,7 +24,7 @@ const Header = () => {
     setTimeout(() => {
       setShowMobileCategories(false);
       setIsClosing(false);
-    }, 200);
+    }, 150);
   };
 
   const handleToggleMobileMenu = () => {
@@ -274,7 +274,7 @@ const Header = () => {
                     <FaChevronDown 
                       style={{
                         transform: showMobileCategories ? 'rotate(180deg)' : 'rotate(0)',
-                        transition: 'transform 0.12s ease'
+                        transition: 'transform 0.1s ease'
                       }}
                       size={12}
                     />
@@ -290,7 +290,7 @@ const Header = () => {
                           bottom: 0,
                           backgroundColor: 'var(--mobile-overlay-bg)',
                           zIndex: 9998,
-                          animation: isClosing ? 'fadeOut 0.12s ease-out forwards' : 'fadeIn 0.12s ease-out forwards'
+                          animation: isClosing ? 'fadeOut 0.1s ease-out forwards' : 'fadeIn 0.1s ease-out forwards'
                         }} 
                         onClick={handleCloseMenu} 
                       />
@@ -307,7 +307,7 @@ const Header = () => {
                         borderRadius: '10px',
                         boxShadow: '0 0 20px rgba(0,0,0,0.5)',
                         border: '1px solid var(--mobile-menu-border)',
-                        animation: isClosing ? 'slideDown 0.12s ease-out forwards' : 'slideUp 0.12s ease-out forwards'
+                        animation: isClosing ? 'slideDown 0.1s ease-out forwards' : 'slideUp 0.1s ease-out forwards'
                       }}>
                         <style>
                           {`
