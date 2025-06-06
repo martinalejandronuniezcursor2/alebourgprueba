@@ -297,8 +297,8 @@ const Header = () => {
                       <div style={{
                         position: 'fixed',
                         top: '20px',
-                        left: '15px',
-                        right: '15px',
+                        left: '10px',
+                        right: '10px',
                         bottom: '20px',
                         backgroundColor: 'var(--mobile-menu-bg)',
                         zIndex: 9999,
