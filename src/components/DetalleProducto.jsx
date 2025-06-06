@@ -124,19 +124,7 @@ const DetalleProducto = () => {
                   textAlign: 'center',
                   border: '1px solid rgba(0, 0, 0, 0.05)'
                 }}>
-                  <div style={{
-                    position: 'absolute',
-                    top: '10px',
-                    right: '10px',
-                    backgroundColor: '#00cc44',
-                    color: 'black',
-                    padding: '4px 12px',
-                    borderRadius: '20px',
-                    fontSize: '0.9rem',
-                    fontWeight: 'bold'
-                  }}>
-                    ¡Disponible!
-                  </div>
+
                   <div style={{
                     fontSize: '0.9rem',
                     opacity: '0.8',
@@ -201,6 +189,58 @@ const DetalleProducto = () => {
           </Row>
         </div>
       </div>
+      <style>
+        {`
+          @media (max-width: 768px) {
+            /* Eliminar todos los espacios */
+            .product-details {
+              border: none !important;
+              box-shadow: none !important;
+              padding: 0 !important;
+            }
+            .product-image-container {
+              padding: 0 !important;
+              margin: 0 !important;
+              min-height: auto !important;
+            }
+            .precio-container {
+              border: none !important;
+              margin: 0 !important;
+              padding: 1rem !important;
+            }
+            .categoria-container {
+              margin: 0 !important;
+              padding: 1rem !important;
+            }
+            h2 {
+              margin: 0 !important;
+              padding: 1rem !important;
+            }
+            .d-grid {
+              padding: 1rem !important;
+            }
+            
+            /* Estilos específicos para modo claro */
+            [data-theme="light"] .precio-container {
+              background-color: transparent !important;
+            }
+            
+            /* Estilos específicos para modo oscuro */
+            [data-theme="dark"] .product-details {
+              background-color: rgba(0, 0, 0, 0.2) !important;
+            }
+            [data-theme="dark"] .precio-container {
+              background-color: rgba(255, 255, 255, 0.05) !important;
+            }
+            [data-theme="dark"] .product-image-container {
+              background-color: rgba(0, 0, 0, 0.2) !important;
+            }
+            [data-theme="dark"] .categoria-container p {
+              background-color: rgba(255, 255, 255, 0.05) !important;
+            }
+          }
+        `}
+      </style>
     </Container>
   );
 };

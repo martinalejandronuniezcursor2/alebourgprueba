@@ -467,7 +467,7 @@ button {
 
 .mobile-menu-container {
   height: 100% !important;
-  display: flex !important;
+    display: flex !important;
   flex-direction: column !important;
   background-color: rgb(10, 10, 11) !important;
   opacity: 0 !important;
@@ -478,13 +478,13 @@ button {
 .mobile-menu.show .mobile-menu-container {
   opacity: 1 !important;
   transform: translateY(0) !important;
-}
+  }
 
 .mobile-menu-header {
   padding: 1rem 1.5rem !important;
-  display: flex !important;
+    display: flex !important;
   justify-content: space-between !important;
-  align-items: center !important;
+    align-items: center !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
