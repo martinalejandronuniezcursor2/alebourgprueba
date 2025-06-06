@@ -475,15 +475,33 @@ button:focus-visible {
   width: 56px !important;
   height: 56px !important;
   border-radius: 50% !important;
-  background-color: #b04a78 !important;
   color: white !important;
   display: none !important;
   align-items: center !important;
   justify-content: center !important;
-  box-shadow: 0 4px 12px rgba(176, 74, 120, 0.3) !important;
   transition: transform 0.2s ease !important;
   z-index: 1060 !important;
   border: none !important;
+}
+
+/* Estilos para modo oscuro */
+[data-theme="dark"] .floating-cart-button {
+  background-color: #b04a78 !important;
+  box-shadow: 0 4px 12px rgba(176, 74, 120, 0.3) !important;
+}
+
+[data-theme="dark"] .floating-cart-button .badge {
+  border: 2px solid #b04a78 !important;
+}
+
+/* Estilos para modo claro */
+[data-theme="light"] .floating-cart-button {
+  background-color: #374151 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+[data-theme="light"] .floating-cart-button .badge {
+  border: 2px solid #374151 !important;
 }
 
 .floating-cart-button:hover {
@@ -495,7 +513,6 @@ button:focus-visible {
   top: -8px !important;
   right: -8px !important;
   background-color: #dc2626 !important;
-  border: 2px solid #b04a78 !important;
   border-radius: 50% !important;
   padding: 0.25rem 0.5rem !important;
   font-size: 0.75rem !important;
