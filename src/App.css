@@ -147,13 +147,16 @@ button {
 }
 
 .botonCarritoEstilo{
-  background-color: rgba(250, 251, 251, 0.079) !important;
-  color: rgb(255, 255, 255) !important;
+  background-color: rgba(250, 251, 251, 0.03) !important;
+  color: rgb(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.3s ease !important;
 }
 
 .botonCarritoEstilo:hover{
-  background-color: #b04a78 !important;
+  background-color: rgba(176, 74, 120, 0.2) !important;
   color: rgb(255, 255, 255) !important;
+  transform: translateY(-1px) !important;
 }
 
 .inputForEstilos{
@@ -374,19 +377,21 @@ button {
   width: 56px !important;
   height: 56px !important;
   border-radius: 50% !important;
-  background-color: #fe99d3 !important;
+  background-color: rgba(176, 74, 120, 0.8) !important;
   color: white !important;
   display: none !important; /* Por defecto oculto */
   align-items: center !important;
   justify-content: center !important;
-  box-shadow: 0 4px 12px rgba(254, 153, 211, 0.3) !important;
+  box-shadow: 0 4px 8px rgba(176, 74, 120, 0.2) !important;
   transition: transform 0.2s ease !important;
   z-index: 1060 !important;
   border: none !important;
+  opacity: 0.9 !important;
 }
 
 .floating-cart-button:hover {
-  transform: scale(1.1) !important;
+  opacity: 1 !important;
+  transform: scale(1.05) !important;
 }
 
 .floating-cart-button .badge {
@@ -440,6 +445,43 @@ button {
   .category-item:hover {
     background-color: rgba(255, 255, 255, 0.05) !important;
     color: white !important;
+  }
+
+  .theme-toggle-btn,
+  .botonCarritoEstilo {
+    width: 36px !important;
+    height: 36px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
+    padding: 0 !important;
+    opacity: 0.8 !important;
+  }
+
+  .theme-toggle-btn {
+    background-color: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  .theme-toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    opacity: 1 !important;
+  }
+
+  .botonCarritoEstilo {
+    background-color: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  .botonCarritoEstilo:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    opacity: 1 !important;
   }
 }
 

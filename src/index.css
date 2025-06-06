@@ -153,16 +153,15 @@ button:focus-visible {
 }
 
 .theme-toggle-btn {
-  min-width: 120px !important;
-  height: 36px !important;
+  height: 32px !important;
+  width: 32px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 6px !important;
   border-radius: 6px !important;
   transition: all 0.2s ease !important;
-  padding: 0 12px !important;
-  font-size: 0.85rem !important;
+  padding: 0 !important;
 }
 
 .theme-text {
@@ -171,14 +170,15 @@ button:focus-visible {
 
 /* Modo claro */
 [data-theme="light"] .theme-toggle-btn {
-  background-color: rgba(0, 0, 0, 0.03) !important;
-  color: rgba(0, 0, 0, 0.6) !important;
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  background-color: rgba(55, 65, 81, 0.03) !important;
+  color: rgba(30, 41, 59, 0.8) !important;
+  border: 1px solid rgba(30, 41, 59, 0.1) !important;
 }
 
 [data-theme="light"] .theme-toggle-btn:hover {
-  background-color: rgba(0, 0, 0, 0.05) !important;
-  border-color: rgba(0, 0, 0, 0.12) !important;
+  background-color: rgba(55, 65, 81, 0.08) !important;
+  color: rgba(30, 41, 59, 1) !important;
+  transform: translateY(-1px) !important;
 }
 
 /* Modo oscuro */
@@ -370,13 +370,15 @@ button:focus-visible {
 }
 
 [data-theme="light"] .theme-toggle-btn {
-  background-color: #f1f5f9 !important;
-  color: #1e293b !important;
-  border: 1px solid #e2e8f0 !important;
+  background-color: rgba(55, 65, 81, 0.03) !important;
+  color: rgba(30, 41, 59, 0.8) !important;
+  border: 1px solid rgba(30, 41, 59, 0.1) !important;
 }
 
 [data-theme="light"] .theme-toggle-btn:hover {
-  background-color: #e2e8f0 !important;
+  background-color: rgba(55, 65, 81, 0.08) !important;
+  color: rgba(30, 41, 59, 1) !important;
+  transform: translateY(-1px) !important;
 }
 
 [data-theme="light"] .navbar-toggler {
@@ -411,14 +413,15 @@ button:focus-visible {
 
 /* Botón de carrito */
 [data-theme="light"] .botonCarritoEstilo {
-  background-color: #f1f5f9 !important;
-  color: #1e293b !important;
-  border: 1px solid #e2e8f0 !important;
+  background-color: rgba(55, 65, 81, 0.03) !important;
+  color: rgba(30, 41, 59, 0.8) !important;
+  border: 1px solid rgba(30, 41, 59, 0.1) !important;
 }
 
 [data-theme="light"] .botonCarritoEstilo:hover {
-  background-color: #e2e8f0 !important;
-  color: #1e293b !important;
+  background-color: rgba(55, 65, 81, 0.08) !important;
+  color: rgba(30, 41, 59, 1) !important;
+  transform: translateY(-1px) !important;
 }
 
 /* Footer */
@@ -526,8 +529,8 @@ button:focus-visible {
 
 /* Estilos para modo claro */
 [data-theme="light"] .floating-cart-button {
-  background-color: #374151 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  background-color: rgba(55, 65, 81, 0.9) !important;
+  box-shadow: 0 4px 8px rgba(55, 65, 81, 0.15) !important;
 }
 
 [data-theme="light"] .floating-cart-button .badge {
@@ -535,7 +538,7 @@ button:focus-visible {
 }
 
 .floating-cart-button:hover {
-  transform: scale(1.1) !important;
+  background-color: rgba(55, 65, 81, 1) !important;
 }
 
 .floating-cart-button .badge {
@@ -563,6 +566,7 @@ button:focus-visible {
     width: auto !important;
     margin: 10rem auto 0.5rem auto !important;
     min-width: 160px !important;
+    padding: 0 12px !important;
   }
 
   .theme-toggle-btn svg {
@@ -771,5 +775,24 @@ html[data-theme="light"] button[style*="background: none"]:hover {
 [data-theme="dark"] .search-container:focus-within {
   border-color: rgba(255, 255, 255, 0.4) !important;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .botonCarritoEstilo {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-theme="dark"] .botonCarritoEstilo:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
 }
 

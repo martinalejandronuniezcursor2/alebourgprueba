@@ -218,7 +218,7 @@ const Header = () => {
               to="/verpedido" 
               className="btn btn-outline-light position-relative botonCarritoEstilo"
             >
-              <FaShoppingCart size={20} />
+              <FaShoppingCart size={18} />
               {cantidadTotal > 0 && (
                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                   {cantidadTotal}
@@ -463,7 +463,7 @@ const Header = () => {
         to="/verpedido" 
         className="floating-cart-button d-sm-none"
       >
-        <FaShoppingCart size={24} />
+        <FaShoppingCart size={22} />
         {cantidadTotal > 0 && (
           <span className="badge">
             {cantidadTotal}
