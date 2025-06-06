@@ -450,58 +450,119 @@ button {
   left: 0 !important;
   width: 100% !important;
   height: 100vh !important;
-  background-color: rgb(10, 10, 11) !important;
+  background-color: rgba(0, 0, 0, 0) !important;
   z-index: 2000 !important;
-  transform: translateY(-100%) !important;
-  transition: all 0.1s ease-out !important;
   opacity: 0 !important;
   visibility: hidden !important;
-  will-change: transform, opacity, visibility !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  backdrop-filter: blur(0px) !important;
+  -webkit-backdrop-filter: blur(0px) !important;
 }
 
 .mobile-menu.show {
-  transform: translateY(0) !important;
   opacity: 1 !important;
   visibility: visible !important;
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
 }
 
 .mobile-menu-container {
-  height: 100% !important;
-    display: flex !important;
-  flex-direction: column !important;
-  padding: 0 !important;
+  width: 100% !important;
+  height: 100vh !important;
   background-color: rgb(10, 10, 11) !important;
+  transform: scale(0.98) translateY(10px) !important;
+  opacity: 0 !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  overflow: hidden !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+@media (min-width: 576px) {
+  .mobile-menu-container {
+    width: 94% !important;
+    max-width: 420px !important;
+    height: auto !important;
+    max-height: 90vh !important;
+    border-radius: 16px !important;
   }
+}
+
+.mobile-menu.show .mobile-menu-container {
+  transform: scale(1) translateY(0) !important;
+  opacity: 1 !important;
+}
 
 .mobile-menu-header {
-    display: flex !important;
+  padding: 1.25rem !important;
+  display: flex !important;
+  align-items: center !important;
   justify-content: space-between !important;
-    align-items: center !important;
-  padding: 1rem 1.5rem !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-  background-color: rgba(0, 0, 0, 0.3) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 .mobile-menu-close {
-  background: transparent !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 12px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: white !important;
   border: none !important;
-  color: rgba(255, 255, 255, 0.8) !important;
-  font-size: 1.5rem !important;
-  padding: 0.5rem !important;
-  cursor: pointer !important;
-  transition: color 0.2s ease !important;
-  margin-right: -0.5rem !important;
+  transition: all 0.2s ease !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
 }
 
 .mobile-menu-close:hover {
-  color: white !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-1px) !important;
+}
+
+.mobile-menu-close:active {
+  transform: translateY(0) !important;
 }
 
 .mobile-menu-content {
   flex: 1 !important;
   overflow-y: auto !important;
-  padding: 1.5rem !important;
-  background-color: rgb(10, 10, 11) !important;
+  padding: 1.25rem !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+@media (min-width: 576px) {
+  .mobile-menu-content {
+    max-height: calc(90vh - 73px) !important;
+    flex: none !important;
+  }
+}
+
+/* Ajuste del scroll */
+.mobile-menu-content {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.mobile-menu-content::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Animación del botón hamburguesa */
+.navbar-toggler {
+  transition: transform 0.2s ease !important;
+}
+
+.navbar-toggler:active {
+  transform: scale(0.95) !important;
 }
 
 .mobile-menu-nav {
