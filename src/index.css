@@ -561,7 +561,7 @@ button:focus-visible {
 
   .theme-toggle-btn {
     width: auto !important;
-    margin: 6rem auto 0.5rem auto !important;
+    margin: 10rem auto 0.5rem auto !important;
     min-width: 160px !important;
   }
 
