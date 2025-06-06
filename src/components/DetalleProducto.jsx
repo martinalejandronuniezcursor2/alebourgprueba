@@ -119,10 +119,7 @@ const DetalleProducto = () => {
                   marginBottom: '1.5rem',
                   position: 'relative',
                   padding: '1.5rem',
-                  backgroundColor: 'rgba(0, 0, 0, 0.03)',
-                  borderRadius: '8px',
-                  textAlign: 'center',
-                  border: '1px solid rgba(0, 0, 0, 0.05)'
+                  textAlign: 'center'
                 }}>
 
                   <div style={{
