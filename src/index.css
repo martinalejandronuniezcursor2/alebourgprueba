@@ -711,3 +711,12 @@ html[data-theme="light"] button[style*="background: none"]:hover {
   color: rgba(255, 255, 255, 0.6) !important;
 }
 
+[data-theme="dark"] .search-container {
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .search-container:focus-within {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2) !important;
+}
+
