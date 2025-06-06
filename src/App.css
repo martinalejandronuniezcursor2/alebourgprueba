@@ -453,7 +453,7 @@ button {
   background-color: rgb(10, 10, 11) !important;
   z-index: 2000 !important;
   transform: translateY(-100%) !important;
-  transition: all 0.15s ease-out !important;
+  transition: all 0.08s ease-out !important;
   opacity: 0 !important;
   visibility: hidden !important;
   will-change: transform, opacity, visibility !important;
@@ -833,7 +833,7 @@ button {
 @keyframes slideUp {
   0% {
     opacity: 0;
-    transform: translateY(5vh) scale(0.98);
+    transform: translateY(3vh) scale(0.99);
   }
   100% {
     opacity: 1;
@@ -848,24 +848,24 @@ button {
   }
   100% {
     opacity: 0;
-    transform: translateY(5vh) scale(0.98);
+    transform: translateY(3vh) scale(0.99);
   }
 }
 
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
   }
-  100% {
-    opacity: 1;
+  to {
+    opacity: 0.8;
   }
 }
 
 @keyframes fadeOut {
-  0% {
-    opacity: 1;
+  from {
+    opacity: 0.8;
   }
-  100% {
+  to {
     opacity: 0;
   }
 }
