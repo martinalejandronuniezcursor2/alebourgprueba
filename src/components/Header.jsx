@@ -305,9 +305,10 @@ const Header = () => {
                         padding: '20px',
                         overflowY: 'auto',
                         borderRadius: '10px',
-                        boxShadow: '0 0 20px rgba(0,0,0,0.5)',
+                        boxShadow: '0 0 20px rgba(0,0,0,0.3)',
                         border: '1px solid var(--mobile-menu-border)',
-                        animation: isClosing ? 'slideDown 0.08s ease-out forwards' : 'slideUp 0.08s ease-out forwards'
+                        animation: isClosing ? 'slideDown 0.06s cubic-bezier(0.4, 0, 0.2, 1) forwards' : 'slideUp 0.06s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+                        willChange: 'transform, opacity'
                       }}>
                         <style>
                           {`
