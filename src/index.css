@@ -837,3 +837,19 @@ html[data-theme="light"] button[style*="background: none"]:hover {
   box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.2) !important;
 }
 
+[data-theme="dark"] .cart-item {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .cart-item:hover {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .cart-total {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-top: 2px solid rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: brightness(95%) !important;
+}
+
